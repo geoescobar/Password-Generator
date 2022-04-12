@@ -11,8 +11,14 @@ function generatePassword() {
   
   var allowedCharacters = [];
 
- 
   var confirmNumberOfCharacters = prompt('Input number of password characters:');
+ if (confirmNumberOfCharacters < 8) {
+   alert('Please pick a number between 8 & 128');
+   return generatePassword();
+ } else if (confirmNumberOfCharacters > 128) {
+    alert('Please pick a number between 8 & 128');
+    return generatePassword();
+ }
 
   var confirmUppercase = confirm('Do you want to include uppercase letters?');
   if (confirmUppercase === true) {
